@@ -3,28 +3,28 @@
 	var hash =window.location.hash;
 	if (hash==null || hash.length<10){
 		if(search==null || search.length<10){
-			rdt=false
+			rdt=false;
 		}else{
-			rdt=search
+			rdt=search;
 			if (rdt.indexOf('-') > -1){
-				var a=search.split("-")
+				var a=search.split("-");
 				if(a[0]=="?c"){
-					rdt="?itm_cadaz=c&"
+					rdt="?itm_cadaz=c&";
 				}else if(a[0]=="?u"){
-					rdt="?itm_cadaz=u&"
+					rdt="?itm_cadaz=u&";
 				}
-				var s=a[1].split("_")
-				rdt+="subid="+s[0]+"&"
-				rdt+="icy="+s[1]
+				var s=a[1].split("_");
+				rdt+="subid="+s[0]+"&";;
+				rdt+="icy="+s[1];
 			}
 		}
 	}else{
-		rdt=hash.replace("#","")
+		rdt=hash.replace("#","?");
 	}
 	if(rdt==false){
-		var d="404"
+		var d="https://www.google.fr";
 	}else{
-		var d="http://pac.consultingskills.org/"+rdt;
+		var d="https://pac.consultingskills.org/"+rdt;
 	}
 	window.location.replace(d);
 </script>
